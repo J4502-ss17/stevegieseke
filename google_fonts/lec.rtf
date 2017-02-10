@@ -1,0 +1,125 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{none\}.}{\leveltext\leveltemplateid1\'01.;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid1}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs42 \cf0 You can see that this is similar to our previous CSS class sample, other than I\'92ve added in some more hierarchy to what\'92s going on. What I want to do here is to add in a font family for three things: I\'92ll do the headlines (and subheads), the body type, and the caption type. If we have time I\'92ll also do a pull quote. \
+\
+We\'92re going to start with the body type because it\'92s the most important. \
+\
+I\'92m going to pick a font that I already like, and will explain why as we go along. Go to: \
+\
+{\field{\*\fldinst{HYPERLINK "https://fonts.google.com/specimen/Merriweather"}}{\fldrslt https://fonts.google.com/specimen/Merriweather}}\
+\
+good x-height, has four styles, italic styles in each weight \
+\
+also built to have a sans-serif version that will complement this \
+\
+go to Select Font \'97 Embed Font \'97 Customize \
+\
+want to select regular, italic, bold and bold italic \
+\
+can keep Latin as main language; use your own selections if you need other stuff. \
+\
+Keep in mind page loading.  \
+\
+go back to embed, and you get the link code that you\'92ll need to use. We can copy and paste right into pages, then customize.\
+\
+We want to add the link tag right above our stylesheet, so it can load before the other sheet. \
+\
+Then we\'92ll get into the stylesheet and use the font-family tag. \
+\
+I\'92m going to add\
+\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl280\partightenfactor0
+\ls1\ilvl0\cf2 	f\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 ont-family: 'Merriweather', serif;\
+\
+right to the p tag, and get rid of the color. \
+\
+\pard\tx0\tx220\pardeftab720\sl280\partightenfactor0
+\ls1\ilvl0\cf2 We immediately see the body text change. Now because this is a font with a big x-height, we\'92ll see that the type looks a little squished. We\'92ll start playing with the line-height, what in print we call leading, in a second, but let\'92s first set the overall font size. \
+\
+There\'92s a long debate over em vs. rem units on the web. The em unit inherits from its parent elements, so it can get to be confusing to use for layouts. The rem unit is relative to the browser\'92s default font size, it can also be confusing but for different reasons. But it\'92s useful for accessibility because it scales for users who have set their browser type differently than what the default is, so I tend to lean toward using it. \
+\
+Let\'92s write some code: \
+\
+html \{\
+	font-size: 100%\
+\}\
+\
+p \{\
+    font-family: 'Merriweather', serif;\
+	font-size: 1rem;\
+\}\
+\
+And nothing should change for us, because all we\'92ve done is to confirm the browser\'92s settings that the user had. What will change is that as we set more type in rems, the units will scale nicely. \
+\
+Now we can start playing with getting the type to look right \'97 the biggest thing I see is the line-height being pretty squished. There\'92s no hard and fast rule other than default line height kind of sucks; I usually set it around 1.3-1.4 ish. But we\'92ll do some other stuff to demo it first. \
+\
+show line-height as rems or % or whatever. \
+\
+As long as we\'92re messing with this, right now we have a very short font stack \'97 if the Merriweather font doesn\'92t load, let\'92s add some stuff to make sure there\'92s a graceful degradation. \
+\
+We also want to go through and demonstrate using italics which is another way you can style your fonts for the assignment. We can do this two different ways, with slightly different semantic meaning. \
+\
+Let\'92s find something that needs to be italicized and add in a span tag: \
+\
+Why, you stuck up...half-witted...scruffy-looking...<span class="italic">nerf-herder</span>\
+\
+Keep in mind that span is an inline tag. Now that we have that tag there, we can style the text without actually doing something that will change it for people listening on a screen reader. To do that, we go to our css and write: \
+\
+.italic \{\
+	font-style: italic;\
+\}\
+\
+Because everything else inherits, that works just fine for that. Now all you have to do is wrap that span declaration around anything you want to be italic. \
+\
+The other way to make things italic is to use some tags that will make sense for screen readers, but we still have to style. for example, i and b are replaced with em and strong to an extent. \
+\
+em: stress emphasis, pronounced differently \
+\
+strong: importance \
+\
+You can still style those tags, which is important to do \'97 not all browsers will pick up on the italicized font style. \
+\
+Anyhow, let\'92s move on to the headers and subheads. I\'92m going to use Merriweather Sans for them, because it\'92s specifically designed for working with Merriweather. \
+\
+We can add this to our selected font, then copy and paste the code into our html page: \
+\
+\pard\pardeftab720\sl280\partightenfactor0
+\ls1\ilvl0\cf2 <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700|Merriweather:400,400i,700,700i" rel="stylesheet">\
+\
+then into our CSS, we\'92ll write some other styles: \
+\
+h1 \{\
+    font-family: "Merriweather Sans", Helvetica, Arial, sans-serif;\
+\}\
+\
+Now we can define heading styles in a few ways. If we wanted all our headers to have the same font family but different sizes, we could do something like this: \
+\
+h1, h2, h3, h4, h5, h6 \{\
+    font-family: "Merriweather Sans", Helvetica, Arial, sans-serif;\
+\}\
+\
+and then define sizes separately below: \
+\
+h1 \{\
+	font-size: 2.5rem;\
+\}\
+\
+h2 \{\
+	font-size: 1.5rem\
+\}\
+\
+And from there on out we can change the caption style, etc. \
+\
+\pard\tx0\tx220\pardeftab720\sl280\partightenfactor0
+\ls1\ilvl0\cf2 \
+\
+\
+ \
+}

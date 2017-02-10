@@ -1,21 +1,25 @@
 h1 {
-  color: blue;
-  font-family: Arial, sans-serif;
-  font-weight: bold;
-  font-size: 2.5em;
+  color: white;
+  background-color: black;
+  font-family: 'Raleway', Helvetica, sans-serif;
+  font-size: 3em;
   text-align: center;
 }
 
 p {
-  color: blue;
-  font-family: Helvetica, sans-serif;
+  color: white;
+  font-family: 'Inconsolata', monospace, serif;
   font-weight: lighter;
   font-size: 1.2em;
-  font-style: italic;
 }
 
 body {
-  background-color: gray;
+  background-color: teal;
+}
+
+#email {
+  text-align: center;
+  font-size: 1.7em;
 }
 
 #container {
@@ -29,28 +33,31 @@ body {
 }
 
 #nav li {
+  float: left;
   margin: 0;
   padding: 0;
-  border-bottom: 1px solid black;
+  width: 24.93%;
+  border-right: 1px solid black;
 }
 
 #nav a:link, #nav a:visited {
   display: block;
-  color: blue;
+  color: black;
   background-color: white;
-  font-weight: bolder;
+  font-size: 1em;
   text-align: center;
   text-decoration: none;
   padding: 4px;
-  font-family: "Times New Roman", sans-serif;
+  font-family: 'VT323', monospace;
 }
 
 #nav a:hover, #nav a:active {
-  background-color: teal;
+  background-color: gray;
 }
 
 #footer {
   color: black;
+  background-color: white;
   font-family: sans-serif;
   font-size: 0.8em;
   text-align: center;
