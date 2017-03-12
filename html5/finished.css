@@ -1,0 +1,19 @@
+canvas {
+	border: 1px dotted black;
+}
+
+audio {
+	width: 1000px;
+}
+
+body {
+	background-color: #eee;
+}
+
+video {
+	padding: 10px;
+	border: 1px solid #ddd;
+	background-color: white;
+	-webkit-transform: rotate(-5deg);
+	-webkit-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+}
