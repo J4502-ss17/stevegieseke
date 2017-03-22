@@ -1,0 +1,9 @@
+/* =================================
+  Flexbox
+==================================== */
+
+.container {
+	display: flex;
+	flex-flow: row nowrap; /*default*/
+	flex-flow: column wrap;/*example*/
+}

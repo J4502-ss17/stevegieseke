@@ -1,0 +1,18 @@
+/* =================================
+  Flexbox
+==================================== */
+
+.container {
+	display: flex;
+	height: 300px;
+	flex-wrap: nowrap;
+}
+
+.item {
+	flex-basis: auto;
+	flex-grow: 1;
+}
+
+.item-3 {
+	flex-grow: 2;
+}

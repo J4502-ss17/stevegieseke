@@ -1,0 +1,11 @@
+/* =================================
+  Flexbox
+==================================== */
+
+.container {
+	display: flex;
+	flex-direction: row; /*runs LTR along the horizontal axis*/
+	flex-direction: row-reverse; /*reverses row to run RTL along the horizontal axis*/
+	flex-direction: column; /*runs top to bottom along the vertical axis*/
+	flex-direction: column-reverse;/*runs bottom to top along the vertical axis  */
+}

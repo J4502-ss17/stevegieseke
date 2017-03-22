@@ -1,0 +1,16 @@
+/* =================================
+  Flexbox
+==================================== */
+
+.container {
+	display: flex;
+	height: 300px;
+	flex-wrap: wrap;
+	align-content: stretch;/*default; stretches items to take up space*/
+	align-content: flex-start;/*aligns items to the start of the main axis*/
+	align-content: flex-end;/*aligns items to the end of the main axis*/
+	align-content: center;/*aligns items to the center of the main axis*/
+	align-content: space-between;/*aligns items to the front and end of the main axis, putting space between*/
+	align-content: space-around;/*puts equal space around the items*/
+
+}

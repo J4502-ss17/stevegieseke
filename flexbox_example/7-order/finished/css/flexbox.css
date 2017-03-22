@@ -1,0 +1,21 @@
+/* =================================
+  Flexbox
+==================================== */
+
+.container {
+	display: flex;
+	height: 300px;
+	flex-wrap: wrap;
+}
+
+.item-2 {
+	order: -1;
+}
+
+.item-6 {
+	order: 1;
+}
+
+.item-8 {
+	order: 2; 
+}

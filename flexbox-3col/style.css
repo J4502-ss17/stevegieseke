@@ -1,0 +1,141 @@
+/*Typography*/
+
+body {
+    font-family: 'Droid Serif', Helvetica, Arial, serif;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+p {
+    font-size: 1em;
+}
+
+/*Navigation styles*/
+
+.navigation {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background: gray;
+  display: flex;
+  flex-flow: column;
+}
+
+.navigation a {
+  text-decoration: none;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  border-bottom: 1px solid black;
+}
+
+.navigation li:last-of-type a {
+  border-bottom: none;
+}
+
+/*Image width*/
+
+img {
+  width: 100%;
+}
+
+/*Colors for different parts of page */
+
+header {
+  background: tomato;
+}
+
+footer {
+  background: lightgreen;
+}
+
+article {
+  background: deepskyblue;
+}
+
+.aside-1 {
+  background: gold;
+}
+
+.aside-2 {
+  background: hotpink;
+}
+
+/*Setting up flexible boxes for our content*/
+
+.wrapper {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+header, article, aside, footer {
+  flex: 1 100%;
+  padding: 10px;
+}
+
+/*These styles activate when the page is larger than 800px wide*/
+
+
+@media (min-width:800px) {
+
+  .navigation {
+    flex-flow: row wrap;
+    justify-content: flex-end;
+  }
+
+  .navigation a {
+    border: none;
+  }
+
+  .navigation a:hover {
+    background: black;
+  }
+
+  aside {
+    flex: 1 auto;
+  }
+
+  article {
+    flex: 3 auto;
+  }
+
+  .aside-1 {
+    order: 1;
+  }
+
+  article {
+    order: 2;
+  }
+
+  .aside-2 {
+    order: 3;
+  }
+
+  footer {
+    order: 4;
+  }
+
+  /*img {
+    float: left;
+    width: 45%;
+  }*/
+
+  article {
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+  }
+
+  .image {
+    width: 45%;
+    padding-right: 10px;
+  }
+
+  .story {
+    width: 45%;
+  }
+
+}

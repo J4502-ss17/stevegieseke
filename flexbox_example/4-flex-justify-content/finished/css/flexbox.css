@@ -1,0 +1,12 @@
+/* =================================
+  Flexbox
+==================================== */
+
+.container {
+	display: flex;
+	justify-content: flex-start;/*default value*/
+	justify-content: flex-end;/*moves items to end of main axis*/
+	justify-content: center;/*centers all the items along the main axis*/
+	justify-content: space-around;/*puts equal amounts of space around each item*/
+	justify-content: space-between;/*puts equal amounts of space between each item, moving first and last item to outer edges*/
+}

@@ -4,6 +4,8 @@ h1 {
   font-family: 'Raleway', Helvetica, sans-serif;
   font-size: 3em;
   text-align: center;
+  padding: 0;
+  margin: 0;
 }
 
 p {
@@ -28,16 +30,22 @@ body {
 }
 
 #nav {
+  margin: 0;
   padding: 0;
   list-style-type: none;
+  display: flex;
+  flex-flow: column;
 }
 
 #nav li {
-  float: left;
   margin: 0;
   padding: 0;
-  width: 24.93%;
-  border-right: 1px solid black;
+  width: 100%;
+  border-bottom: 1px solid black;
+}
+
+#nav li:last-of-type a{
+  border-bottom: none;
 }
 
 #nav a:link, #nav a:visited {
