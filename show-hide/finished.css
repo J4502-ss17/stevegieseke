@@ -1,0 +1,143 @@
+/*Styles go here*/
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+body {
+    line-height: 1.45em;
+}
+
+#container {
+    width: 95%;
+    margin: 0 auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Merriweather Sans", Helvetica, Arial, sans-serif;
+    font-weight: 400;
+}
+
+h1 {
+    font-size: 2em;
+    margin-top: 0.5em;
+}
+
+h2 {
+    font-size: 1.5em;
+    margin-bottom: 0.8em;
+}
+
+p {
+    font-family: "Merriweather", Georgia, "Times New Roman", serif;
+    font-size: 1em;
+    margin-bottom: 0.8em;
+}
+
+aside p {
+    font-size: 0.8em;
+    line-height: 1.2em;
+}
+
+.caption {
+    font-size: 0.7em;
+    text-align: right;
+    margin-top: 0;
+}
+
+.dateline {
+    font-family: "Merriweather Sans", Helvetica, Arial, sans-serif;
+    font-size: 0.7em;
+    color: #aaa;
+    margin-bottom: 0;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li a {
+    font-family: "Merriweather Sans", Helvetica, Arial, sans-serif;
+    text-decoration: none;
+    margin-bottom: 1em;
+}
+
+#bar {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 0.7em;
+    border-bottom: 1px solid #ccc;
+}
+
+.logo {
+    border-radius: 5%;
+    margin-left: 0.5em;
+    height: 3em;
+}
+
+
+footer {
+    border-top: 1px solid #ccc;
+}
+
+footer p {
+    font-size: 0.8em;
+}
+
+a {
+    color: #000;
+}
+
+a:hover {
+    color: #bd5532;
+}
+
+img, .caption {
+    display: none;
+}
+
+@media screen and (min-width: 600px) {
+
+    #container {
+        width: 80%;
+    }
+
+    img, .caption {
+        display: block;
+    }
+}
+
+@media screen and (min-width: 800px) {
+
+    #container {
+        width: 70%;
+        max-width: 60em;
+    }
+
+    #bar {
+        background-color: #ADD8E6;
+        padding: 10px;
+    }
+
+    article {
+        max-width: 40em;
+        margin-left: 5em;
+    }
+
+    nav ul {
+        justify-content: flex-end;
+    }
+
+    nav ul li {
+        margin-left: 1.8em;
+    }
+}

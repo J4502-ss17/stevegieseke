@@ -8,6 +8,10 @@ h1 {
   margin: 0;
 }
 
+aside {
+  background:#848d97;
+}
+
 p {
   color: white;
   font-family: 'Inconsolata', monospace, serif;
@@ -86,35 +90,45 @@ body {
 }
 
 img {
-  border: none;
-  width: 50%;
+  display: none;
 }
 
-@media (min-width:800px) {
+@media all and (min-width: 600px) {
+
+
+  img {
+    display: flex;
+    width: 30%;
+    height: 0%;
+    flex: 1 auto;
+    padding: 10px;
+    border: none;
+    margin: 0;
+  }
+
+  .wrapper {
+    display: flex;
+    flex-flow: row;
+    flex: 1 auto;
+  }
+
+  aside {
+    flex: 1 auto;
+    padding: 10px;
+  }
+
+}
+
+@media all and (min-width: 800px) {
 
   .nav {
     flex-flow: row;
   }
 
-  .nav li {
-    border-right: 1px solid black;
-  }
-
-  .wrapper {
-    flex-flow: row wrap;
-  }
-
-  .email {
-    flex: 1 auto;
-  }
-
-  h1 {
-    flex: 1 auto;
-  }
-
-  a {
-    flex: 3;
-  }
-
+  p {
+		width: 80%;
+		max-width: 60em;
+		margin: 1.5em auto;
+	}
 
 }

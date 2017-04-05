@@ -1,0 +1,178 @@
+body{
+  font-size:16px;
+  margin:0;
+  padding:0;
+}
+
+.head{
+  background:#009077;
+  width:100%;
+}
+
+.main{
+  background:#84beb4;
+}
+
+aside{
+  background:#848d97;
+}
+
+h1{
+  font-size:3em;
+  font-weight:bold;
+  color:white;
+  padding:10px;
+  text-align:center;
+}
+
+.nav{
+  list-style-type: none;
+  display: block;
+  font-size:1.5em;
+  line-height:2em;
+  padding:0;
+  text-align:center;
+  display: flex;
+  flex-flow:column wrap;
+}
+
+.nav li{
+  border-top:1px solid white;
+  border-bottom:1px solid gray;
+  background:#00a085;
+}
+
+.nav a{
+  text-decoration: none;
+  color: white;
+}
+
+h2{
+  font-size:2em;
+  font-style:bold;
+  padding-left:10px;
+  margin:1px;
+}
+
+h2 a{
+  text-decoration: none;
+  color:black;
+}
+
+h2 a:hover{
+  text-decoration:underline;
+}
+
+h2 a:visited{
+  color:gray;
+}
+
+h3{
+  font-size:1em;
+  font-style:normal;
+  padding-left:10px;
+  margin-bottom:8px;
+}
+
+aside h2{
+  font-size:1.5em;
+}
+
+img {
+  width:95%;
+  padding:0 10px;
+  border: none;
+  margin:5px auto;
+}
+
+@media all and (min-width:600px){
+
+  .head{
+    display:flex;
+    flex-flow:row;
+  }
+
+  header{
+    flex:1 auto;
+    justify-content: flex-start;
+  }
+
+  h1{
+    text-align: left;
+    padding:0 10px;
+  }
+
+  .nav{
+    flex-flow:row;
+  }
+
+  .nav li{
+    border:none;
+    margin:5px;
+    padding:10px;
+    background:#009077;
+  }
+
+  .nav a:hover{
+    background:#00806A;
+  }
+
+  .wrapper{
+    display:flex;
+    flex-flow:row;
+  }
+
+  .story{
+    display:flex;
+    flex-flow:row;
+  }
+
+  img{
+    width:10%;
+    height:0%;
+    padding:10px;
+    border: none;
+    margin:0;
+    flex:1 auto;
+  }
+
+  .summary{
+    flex:1 auto;
+  }
+
+  .main{
+    margin-left: 10px;
+  }
+
+  aside{
+    flex:1 auto;
+    margin-right:20px;
+    padding:10px;
+  }
+}
+
+@media all and (min-width:800px){
+
+  .head{
+    display:flex;
+    flex-flow:column;
+  }
+
+  h1{
+    text-align: center;
+    padding:0;
+    margin-top:5px;
+  }
+
+  .nav{
+    flex-flow:row;
+    justify-content: space-around;
+    background:#00a085;
+  }
+
+  .nav li{
+    background:#00a085;
+  }
+
+
+}

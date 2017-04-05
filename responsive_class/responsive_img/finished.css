@@ -1,0 +1,46 @@
+* {margin: 0px; padding: 0px;}
+
+html, body { height: 100%; width: 100%; margin: 0; }
+
+body {
+	font-family: 'PT Serif', serif;
+}
+
+p {
+	font-size: 1.2em;
+	line-height: 1.4;
+	width: 98%;
+	margin: 0.8em auto;
+}
+
+h2 {
+	font-weight: 700;
+	margin: 2em auto;
+}
+
+img {
+	width: 100%;
+}
+
+@media screen and (min-width: 480px) {
+	p{
+		width: 95%;
+		margin: 1em auto;
+	}
+}
+
+@media screen and (min-width: 800px) {
+	p{
+		width: 80%;
+		margin: 1.5em auto;
+	}
+}
+
+@media screen and (min-width: 1000px) {
+	p{
+		width: 80%;
+		max-width: 60em;
+		margin: 1.5em auto;
+	}
+
+}

@@ -1,0 +1,57 @@
+body{
+  font-family: "Georgia", serif;
+}
+
+#header, #nav, #footer, h1, h2, h3{
+  font-family: Tahoma, Geneva, sans-serif;
+}
+
+#header .inner{
+  background: #F38630;
+  padding:10px;
+}
+
+#content .inner{
+  background: #E0E4CC;
+  padding:10px;
+}
+
+#sidebar .inner{
+  background: #69D2E7;
+  color:white;
+  padding:10px;
+}
+
+#nav ul{
+  display:flex;
+  flex-flow:row;
+  justify-content: space-around;
+  background: #A7DBD8;
+  color: #333;
+  list-style-type: none;
+  padding:10px;
+}
+
+#nav a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 10px 10px 10px;
+  font-weight: bold;
+}
+
+#nav li {
+  border-right: 1px solid rgba(255,255,255,.5);
+  padding:5px;
+  text-align:center;
+}
+
+#nav li:last-child {
+  border-right: none;
+}
+
+#footer{
+  background: #FA6900;
+  color:white;
+  padding:10px;
+}
