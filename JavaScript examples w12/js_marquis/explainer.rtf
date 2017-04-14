@@ -1,0 +1,200 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1504\cocoasubrtf600
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;\csgray\c100000;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\b\fs40 \cf0 Brief show/hide content example \
+\
+
+\b0 Let\'92s take a look at the page. We have some basic html, a few paragraphs of text; then a stylesheet and a script. As usual we have an original and a finished version of both. \
+\
+What we\'92re going to do on this page is to show some text, have the rest hidden, then use our JS to reveal it on touch. \
+\
+So what we will need to do: \
+\
+* add a read more link to the first paragraph \
+\
+* hide the paragraph elements other than first one \
+\
+* reveal rest of grafs when user hits \'93Read More\'94 link \
+\
+So to do that, we\'92ll do a few things with straight up vanilla JavaScript, in our script file. \
+\
+Let\'92s start by adding the Read More link to the first graf: \
+\
+var newLink = document.createElement( "a" );\
+\
+what this does is set a new variable, newLink, which creates a new anchor element. It\'92s empty though, which isn\'92t totally useful \'97 we can use some other JS to set attributes to make it more useful. \
+\
+We\'92ll do two things: setAttribute and innerHTML, to give it attributes and populate it with text. \
+\
+newLink.setAttribute("href","#");\
+\
+This expects the attribute and the value you want for it, in that order, so when it\'92s activated we\'92ll have an href=\'93#\'94 effect\
+\
+newLink.innerHTML="Read More";\
+\
+The inner HTML assigns a string value to the inside of the element, i.e. insdide the anchor. \
+\
+We are using those attributes on the variable we set earlier, not on the document itself \'97 we could also make some more JS to reference things inside other places, like a div or an article, class, whatever. \
+\
+Anyhow \'97 we need to put this a tag at the end of the first paragraph, so we need to create some script to reference the first paragraph. We have the getElementsByTagName command, which will give us a list of elements on the page \'97 specifically, this code: \
+\
+var allParagraphs = document.getElementsByTagName('p');\
+\
+will get a list of all the p elements on the page. We can limit that by picking one of them out of the list, in this case the first one (remember indexes in JS are 0-based): \
+\
+var firstParagraph = allParagraphs[0];\
+\
+so we now have initialized two new variables, allParagraphs and firstParagraph; one is a subset of the other. \
+\
+Remember to declare these variables before they\'92re called. \
+\
+So now we\'92ve created the element we want to append (newLink) and also given it a handle that we want to append it to (firstParagraph). \
+\
+We have a built in command on DOM nodes, called appendChild, which allows us to, well, append an element. We\'92ll go ahead and use the appendChild method on that variable of firstParagraph, and it needs an argument passed in \'97 in this case, newLink, which is the variable we set earlier. \
+\
+So this should now be our JS file: \
+\
+var newLink = document.createElement( "a" );\
+\
+var allParagraphs = document.getElementsByTagName('p');\
+\
+var firstParagraph = allParagraphs[0];\
+\
+newLink.setAttribute("href","#");\
+\
+newLink.innerHTML="Read More";\
+\
+firstParagraph.appendChild( newLink );\
+\
+The issue that we see is that it\'92s smushed into the paragraph, because there\'92s no explicit style set on it. \
+\
+We can do a couple of things to set styles on it. The first is to do that explicitly in the JS, with a couple lines of code: \
+\
+newLink.style.display = "inline-block";\
+newLink.style.marginLeft = \'930.5em\'94;\
+\
+So this works by creating the style property directly in the html, with just the javascript firing. That\'92s fine to do here, but you might rather create a class that you can style over in your stylesheet. To do that, though, we need to use the JS to populate the class attribute, because remember this link doesn\'92t actually exist on your page yet. \
+\
+newLink.setAttribute( "class", "more-link" );\
+\
+This will set a class of \'93more-link\'94 which we can reference in our css: \
+\
+.more-link \{\
+    margin-left: 0.5em; \
+\}\
+\
+Now keep in mind if we\'92re using the setAttribute command in this way, it would normally override any other classes in place \'97 in this case, it\'92s coming in from scratch, but something to keep in mind if we\'92re adding to an existing element. \
+\
+So at this point, we have our link, and could style it fancier, but let\'92s leave it there for now. What we need to do next is to hide all the paragraphs, and we\'92ll need to do that by creating a loop that will act on all of them. Let\'92s first write this to the console to make sure we are grabbing the right paragraphs. \
+\
+for( var i = 0; i < allParagraphs.length; i++ ) \{\
+  console.log( allParagraphs[ i ] );\
+\}\
+\
+The syntax here is as such: we need to initialize the loop, give it a condition to tell it how long to run, and give it a final expression, which is what you want done when it runs. \
+\
+Be careful with that second one, if you don\'92t set a length, it will run infinitely and that\'92s a bad thing. \
+\
+The var i=0 command says to start the loop at the 0 basis, and sets a variable, i. \
+\
+the command i < allParagraphs.length; tells it to run as long as the value of i is less than the length of all the paragraphs (length here refers to number). \
+\
+the command i++ tells the loop what to do, which in this case is to add 1 to the value of i on each loop. \
+\
+When the value of I is greater than or equal to allParagraphs.length, the loop stops running. \
+\
+In this case, what the loop will do is to output the paragraphs to the console log, so we can make sure it\'92s iterating right. \
+\
+Cool \'97 it\'92s grabbing the right paragraphs. \
+\
+Let\'92s go on to get rid of that console.log command and instead change the style attribute. Before, we were putting the style in so we could change it with a stylesheet, but now it makes sense for us to use the style in JS \'97 we are controlling this entirely from within the script, and if the script breaks the styles will still be shown. \
+\
+allParagraphs[ i ].style.display = "none";\
+\
+So let\'92s run this, and sure enough all our paragraphs are gone. We need to make an exception for the first graf. The way to do that is to allow the js to skip over the first paragraph, like so: \
+\
+    if( i === 0 ) \{\
+        continue;\
+      \}\
+\
+This won\'92t apply the style of display-none to the first graf, just the others. \
+\
+You can play around with that to display or hide more paragraphs: \
+\
+    if( i === 2 ) \{\
+        continue;\
+      \}\
+ \
+    if( i < 2 ) \{\
+        continue;\
+      \}\
+\
+    if( i <= 2 ) \{\
+        continue;\
+      \}\
+\
+But in any case, we need to alter this to have some behavior when it\'92s actually clicked. The good news is that we already have a reference to our link (newLink) and we have a built-in DOM method to use to listen for events, which is called addEventListener. \
+\
+What we\'92ll do on click is to change the paragraphs back to display: bock. And we\'92ll remove the Read More link from the paragraph. \
+\
+We\'92re actually going to wrap this up in a function called revealCopy: \
+\
+function revealCopy() \{\
+  console.log( "Clicked!" );\
+\}\
+\
+and for now we\'92ll just have it write out to the console log when it\'92s clicked. \
+\
+We need to also set the event listener after the newLink variable: \
+\
+newLink.addEventListener( "click", revealCopy );\
+\
+What the arguments are there, is to show the event type we want to listen for (\'93click\'94) and then the function to execute when that happens (revealCopy)\
+\
+and we\'92ll see that it writes \'93Clicked!\'94 out to the console log. \
+\
+When we click it, it\'92s still trying to go to the link. So we can override that default behavior in the browser. \
+\
+We can see what\'92s going on by passing in the event log into the function, like so, then writing that output to the console: \
+\
+function revealCopy(e) \{\
+  console.log( e );\
+\}\
+\
+click it and you get this cryptic thing that tells you everything the browser is doing when you click a link. \
+\
+We can actually use a method from that event object to prevent the browser default behavior: \
+\
+e.preventDefault() \
+\
+anywhere in the revealCopy function, that will stop the browser following the link. \
+\
+OK. \
+\
+So now we need to actually show the behavior of showing the paragraphs. What we\'92ll need to do is to set the value of the display property to be different once the link is clicked, and to to that we need to loop through the paragraphs again. \
+\
+We can copypasta our code from the other loop and change the style-display to block: \
+\
+function revealCopy(e) \{\
+    var allParagraphs = document.getElementsByTagName("p");\
+    for( var i = 0; i < allParagraphs.length; i++ ) \{\
+        if( i === 0 ) \{\
+            continue;\
+    \}\
+    allParagraphs[ i ].style.display = "block";\
+  \}\
+  e.preventDefault();\
+\}\
+\
+And finally, we\'92ll remove the Read More link. There\'92s a keyword, \'93this\'94 inside a function that\'92s attached to an event, which refers to the element that initiated the event. In other words, inside our revealCopy function, we can use the this keyword to use the remove method. We\'92ll put that right above the e.preventDefault(); code: \
+\
+ this.remove();\
+ e.preventDefault();\
+\
+Now this is not super neat code, but we can optimize it a bit more if we want to. \
+\
+}
