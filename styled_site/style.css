@@ -8,10 +8,6 @@ h1 {
   margin: 0;
 }
 
-aside {
-  background:#848d97;
-}
-
 p {
   color: white;
   font-family: 'Inconsolata', monospace, serif;
@@ -116,11 +112,6 @@ img {
     display: flex;
     flex-flow: row;
     flex: 1 auto;
-  }
-
-  aside {
-    flex: 1 auto;
-    padding: 10px;
   }
 
   .menu-trigger {
